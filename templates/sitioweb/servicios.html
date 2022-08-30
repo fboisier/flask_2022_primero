@@ -1,0 +1,27 @@
+{% extends "sitioweb/base.html" %} 
+{% block titulo %} SERVICIOS {% endblock %}
+
+{% block contenido %}
+    <h1>SERVICIOS</h1>
+
+    <hr>
+    <h3>Listado de Servicios</h3>
+
+    <div class="row">
+
+    {% for servicio in servicios %}
+        <div class="col-4">
+            <div class="card">
+                <img src="{{url_for('static', filename='img/servicios/' + servicio['imagen'])}}" class="card-img-top" alt="{{servicio['imagen']}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{servicio['titulo']}}</h5>
+                    <p class="card-text">{{servicio['descripcion']}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+
+
+{% endblock %}
